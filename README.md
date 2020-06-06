@@ -1,2 +1,3 @@
-# andika
-Richtext writing research :mag:
+# `amemo`
+
+A Rich Text Editor Journey
