@@ -3,7 +3,7 @@ defmodule App.Repo.Migrations.CreatePosts do
 
   def change do
     create table(:posts) do
-      add :text, :string
+      add :text, :text
       add :person_id, :integer
       add :status, :integer
 
