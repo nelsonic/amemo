@@ -30,6 +30,14 @@
     <p><br></p>
   </div>
 
+  <div style="margin-top: 10px;">
+    <%= submit "Save" %>
+  </div>
+
+  <pre id="delta">
+
+  </pre>
+
 
   <script>
     // hide the text input if JS is available:
@@ -42,11 +50,22 @@
         toolbar: [
           [{ header: [1, 2, false] }],
           ['bold', 'italic', 'underline'],
-          ['image', 'code-block']
+          ['image', 'link']
         ]
       },
       placeholder: 'Compose an epic...',
       theme: 'snow'  // or 'bubble'
+    });
+
+    var d = document.getElementById('delta')
+    quill.on('text-change', function(delta, oldDelta, source) {
+      console.log(delta);
+      d.innerHTML = JSON.stringify(delta.ops, null, 2);
+      // if (source == 'api') {
+      //   console.log("An API call triggered this change.");
+      // } else if (source == 'user') {
+      //   console.log("A user action triggered this change.");
+      // }
     });
   </script>
 
@@ -55,17 +74,9 @@
     height: 200px;
     font-size: 1.2em;
   }
+  #delta {
+    height: 250px;
+  }
   </style>
 
-  <%= label f, :person_id %>
-  <%= number_input f, :person_id %>
-  <%= error_tag f, :person_id %>
-
-  <%= label f, :status %>
-  <%= number_input f, :status %>
-  <%= error_tag f, :status %>
-
-  <div>
-    <%= submit "Save" %>
-  </div>
 <% end %>
