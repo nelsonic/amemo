@@ -4,8 +4,10 @@ A Rich Text Editor Journey
 
 
 
+# Build Log
+
 ```
-mix phx.new app
+mix phx.new amemo --no-mailer --no-dashboard --no-gettext
 mix phx.gen.html Blog Post posts  title:string text:text person_id:integer status:integer
 ```
 
