@@ -2,8 +2,6 @@
 
 A Rich Text Editor Journey
 
-
-
 # Build Log
 
 ```

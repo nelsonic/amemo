@@ -80,7 +80,7 @@
   }
   
   .markdown table {
-    @apply w-full my-4 shadow-xl-center rounded-lg tiny-scrollbar;
+    @apply w-full my-4 rounded-lg;
   }
   
   .markdown table thead {
@@ -124,7 +124,7 @@
   
   .markdown pre > code {
     /* Match the editor colors */
-    @apply p-4 rounded-lg align-middle flex-1 overflow-auto bg-editor text-editor font-editor;
+    @apply p-4 rounded-lg align-middle flex-1 overflow-auto;
   }
   
   .markdown kbd {

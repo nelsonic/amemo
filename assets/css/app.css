@@ -3,3 +3,6 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+/* Ref: https://elixirforum.com/t/html-tags-not-being-interpreted-in-liveview/45613/10 */
+@import "./markdown.css";
