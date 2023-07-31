@@ -4,12 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title suffix=" · Phoenix Framework">
+    <.live_title suffix=" Markdown Editor">
       <%= assigns[:page_title] || "Amemo" %>
     </.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
+    <!-- Open ALL Links in New Tab: stackoverflow.com/a/24428525 -->
+    <base target="_blank">
   </head>
   <body class="bg-white antialiased">
     <%= @inner_content %>
