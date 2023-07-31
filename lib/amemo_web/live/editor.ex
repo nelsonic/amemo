@@ -8,6 +8,8 @@ defmodule AmemoWeb.Editor do
     Type some text ...
     [link](https://mvp.fly.dev/)
     https://mvp.fly.dev
+
+    ![gif](https://media.giphy.com/media/V2qjQASrLwLuwpagjI/giphy.gif)
     """
 
     socket = assign(socket, :md, md)
@@ -21,10 +23,15 @@ defmodule AmemoWeb.Editor do
 
   def render(assigns) do
     ~H"""
+    <h1 text-4xl>
+    Type some <b>Markdown</b> in the <b>&lt;textarea&gt;</b>
+    and see it it rendered below.
+    </h1>
+
     <form action="#" phx-change="render" phx-submit="render">
       <textarea
-        rows="5"
-        class="w-full my-2 py-1 px-1 text-slate-800 text-2xl
+        rows="9"
+        class="w-full my-2 py-1 px-1 text-slate-800 text-xl
           bg-white bg-clip-padding
           resize-none hover:resize-y focus:resize-y
           transition ease-in-out

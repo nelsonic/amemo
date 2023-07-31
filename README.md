@@ -26,6 +26,7 @@ mix phx.gen.html Blog Post posts  title:string text:text person_id:integer statu
 
 
 
+
 <br />
 
 # Previous Efforts/Explorations
