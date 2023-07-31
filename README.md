@@ -15,6 +15,50 @@ Adventures in `Markdown` / `Rich Text` Editing
 
 # Try it! [amemo.fly.dev](https://amemo.fly.dev/)
 
+Input some random `Markdown` into the `<textarea>`
+
+```md
+# Hello World! 😊
+
+Write something **bold**, _italic_ or ***both*** with a 
+[link](https://mvp.fly.dev/)
+and some code `dbg("hello")`.  
+Pasting URLs directly works too: 
+https://mvp.fly.dev
+
+![iteles](https://avatars.githubusercontent.com/u/4185328?s=80&v=4)
+
++ Bullet Point
+1. Ordered List
+```
+
+Watch it render to `HTML` _server-side_ in real-time!
+
+
+# _Understand_ it!
+
+If you want to _fully understand_ the `code`
+in this mini-project,
+please follow the `LiveView` Counter Tutorial:
+[dwyl/phoenix-liveview-counter-tutorial](https://github.com/dwyl/phoenix-liveview-counter-tutorial)
+
+
+# Run it on your `localhost`
+
+```
+git clone git@github.com:nelsonic/amemo.git && cd amemo
+mix deps.get
+mix s
+```
+
+Then open 
+[`localhost:4000`](http://localhost:4000/)
+in your fave browser
+you should see something similar to the following:
+
+![amemo-localhost](https://github.com/nelsonic/amemo/assets/194400/17400372-0722-4fa7-ab38-1dfd806cd530)
+
+
 # Build Log
 
 ```
