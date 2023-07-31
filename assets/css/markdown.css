@@ -72,7 +72,7 @@
   }
   
   .markdown a {
-    @apply font-medium underline text-gray-900 hover:no-underline;
+    @apply font-medium underline text-blue-600 hover:no-underline;
   }
   
   .markdown img {
