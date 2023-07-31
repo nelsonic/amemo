@@ -1,6 +1,18 @@
+<div align="center">
+
 # `amemo`
 
-A Rich Text Editor Journey
+Adventures in `Markdown` / `Rich Text` Editing 
+& Rendering in `Phoenix LiveView`
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nelsonic/amemo/ci.yml?label=build&style=flat-square&branch=main)
+[![codecov.io](https://img.shields.io/codecov/c/github/nelsonic/amemo/main.svg?style=flat-square)](http://codecov.io/github/nelsonic/amemo?branch=main)
+[![Hex.pm](https://img.shields.io/hexpm/v/phoenix?color=brightgreen&style=flat-square)](https://hex.pm/packages/elixir_auth_google)
+[![contributions welcome](https://img.shields.io/badge/feedback-welcome-brightgreen.svg?style=flat-square)](https://github.com/nelsonic/amemo/issues)
+[![HitCount](https://hits.dwyl.com/nelsonic/amemo.svg)](https://hits.dwyl.com/nelsonic/amemo)
+
+
+</div>
 
 # Build Log
 
@@ -13,6 +25,8 @@ mix phx.gen.html Blog Post posts  title:string text:text person_id:integer statu
 -->
 
 
+
+<br />
 
 # Previous Efforts/Explorations
 ## Implement Quill Rich Text Editor
