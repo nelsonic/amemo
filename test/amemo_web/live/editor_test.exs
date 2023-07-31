@@ -12,7 +12,7 @@ defmodule AmemoWeb.EditorTest do
     {:ok, view, _html} = live(conn, "/")
 
     assert view
-    |> element("form")
-    |> render_change(%{text: "Hello Changed!"}) =~ "Changed!"
+           |> element("form")
+           |> render_change(%{text: "Hello Changed!"}) =~ "Changed!"
   end
 end

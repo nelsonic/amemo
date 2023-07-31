@@ -9,6 +9,7 @@ defmodule AmemoWeb.Editor do
     [link](https://mvp.fly.dev/)
     https://mvp.fly.dev
     """
+
     socket = assign(socket, :md, md)
     {:ok, assign(socket, :val, 0)}
   end
@@ -21,7 +22,8 @@ defmodule AmemoWeb.Editor do
   def render(assigns) do
     ~H"""
     <form action="#" phx-change="render" phx-submit="render">
-      <textarea rows="5"
+      <textarea
+        rows="5"
         class="w-full my-2 py-1 px-1 text-slate-800 text-2xl
           bg-white bg-clip-padding
           resize-none hover:resize-y focus:resize-y

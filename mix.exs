@@ -64,9 +64,7 @@ defmodule Amemo.MixProject do
       {:html_sanitize_ex, "~> 1.4.2"},
 
       # Track test coverage: github.com/parroty/excoveralls
-      {:excoveralls, "~> 0.16.0", only: [:test, :dev]},
-
-
+      {:excoveralls, "~> 0.16.0", only: [:test, :dev]}
     ]
   end
 
