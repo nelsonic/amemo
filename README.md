@@ -11,14 +11,18 @@ Adventures in `Markdown` / `Rich Text` Editing
 [![contributions welcome](https://img.shields.io/badge/feedback-welcome-brightgreen.svg?style=flat-square)](https://github.com/nelsonic/amemo/issues)
 [![HitCount](https://hits.dwyl.com/nelsonic/amemo.svg)](https://hits.dwyl.com/nelsonic/amemo)
 
-
 </div>
+
+# Try it! [amemo.fly.dev](https://amemo.fly.dev/)
 
 # Build Log
 
 ```
 mix phx.new amemo --no-mailer --no-dashboard --no-gettext
 ```
+
+_All_ the relevant code for this is contained in:
+[`lib/amemo_web/live/editor.ex`](https://github.com/nelsonic/amemo/blob/dc19297783b4be3b6551caa6bd77fa23f7356db8/lib/amemo_web/live/editor.ex)
 
 <!--
 mix phx.gen.html Blog Post posts  title:string text:text person_id:integer status:integer
