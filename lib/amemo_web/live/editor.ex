@@ -7,7 +7,7 @@ defmodule AmemoWeb.Editor do
 
     Type some text ...
     [link](https://mvp.fly.dev/)
-    https://mvp.fly.dev/
+    https://mvp.fly.dev
     """
     socket = assign(socket, :md, md)
     {:ok, assign(socket, :val, 0)}
