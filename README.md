@@ -35,7 +35,7 @@ https://mvp.fly.dev
 Watch it render to `HTML` _server-side_ in real-time!
 
 
-# _Understand_ it!
+# _Understand_ it!git 
 
 If you want to _fully understand_ the `code`
 in this mini-project,

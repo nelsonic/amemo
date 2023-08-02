@@ -63,6 +63,9 @@ defmodule Amemo.MixProject do
       # Remove unwanted HTML: github.com/rrrene/html_sanitize_ex
       {:html_sanitize_ex, "~> 1.4.2"},
 
+      # Shorten links: github.com/dwyl/link
+      {:link, "~> 1.0.3"},
+
       # Track test coverage: github.com/parroty/excoveralls
       {:excoveralls, "~> 0.16.0", only: [:test, :dev]}
     ]
