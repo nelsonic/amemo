@@ -46,6 +46,7 @@ COPY config/config.exs config/${MIX_ENV}.exs config/
 RUN mix deps.compile
 
 COPY priv priv
+COPY mix.lock priv/static
 
 COPY lib lib
 
