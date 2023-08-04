@@ -64,7 +64,7 @@ defmodule Amemo.MixProject do
       {:html_sanitize_ex, "~> 1.4.2"},
 
       # Shorten links: github.com/dwyl/link
-      {:link, "~> 1.0.6"},
+      {:link, "~> 1.0.7"},
 
       # Track test coverage: github.com/parroty/excoveralls
       {:excoveralls, "~> 0.16.0", only: [:test, :dev]}
