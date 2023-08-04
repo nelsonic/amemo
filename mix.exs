@@ -4,7 +4,7 @@ defmodule Amemo.MixProject do
   def project do
     [
       app: :amemo,
-      version: "0.1.0",
+      version: "1.7.7",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
@@ -64,7 +64,7 @@ defmodule Amemo.MixProject do
       {:html_sanitize_ex, "~> 1.4.2"},
 
       # Shorten links: github.com/dwyl/link
-      {:link, "~> 1.0.4"},
+      {:link, "~> 1.0.6"},
 
       # Track test coverage: github.com/parroty/excoveralls
       {:excoveralls, "~> 0.16.0", only: [:test, :dev]}

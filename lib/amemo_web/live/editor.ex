@@ -56,7 +56,9 @@ defmodule AmemoWeb.Editor do
 
   def to_html(markdown) do
     markdown
+    |> dbg()
     |> Link.find_replace_compact()
+    |> dbg()
     |> Earmark.as_html!()
     |> HtmlSanitizeEx.html5()
   end
