@@ -7,7 +7,7 @@ defmodule AmemoWeb.Editor do
 
     Type some text ...
     [link](https://mvp.fly.dev/)
-    https://mvp.fly.dev
+    https://github.com/dwyl/link/pull/5#pullrequestreview-1558913764
 
     ![gif](https://media.giphy.com/media/V2qjQASrLwLuwpagjI/giphy.gif)
     """
@@ -56,10 +56,11 @@ defmodule AmemoWeb.Editor do
 
   def to_html(markdown) do
     markdown
-    |> dbg()
+    # |> String.trim()
     |> Link.find_replace_compact()
     |> dbg()
     |> Earmark.as_html!()
+    |> dbg()
     |> HtmlSanitizeEx.html5()
   end
 end
