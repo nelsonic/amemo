@@ -59,5 +59,6 @@ defmodule AmemoWeb.Editor do
     |> Link.find_replace_compact()
     |> Earmark.as_html!()
     |> HtmlSanitizeEx.html5()
+    |> Link.add_target_blank()
   end
 end
