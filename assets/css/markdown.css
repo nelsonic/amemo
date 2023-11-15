@@ -156,3 +156,7 @@
     @apply text-red-400 text-base font-medium;
     content: "warning: heading levels 1 and 2 are reserved for notebook and section names, please use heading 3 and above.";
   }
+
+  .markdown a {
+    @apply underline;
+  }
