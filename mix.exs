@@ -61,7 +61,7 @@ defmodule Amemo.MixProject do
       {:earmark, "~> 1.4.38"},
 
       # Remove unwanted HTML: github.com/rrrene/html_sanitize_ex
-      {:html_sanitize_ex, "~> 1.4.2"},
+      {:html_sanitize_ex, "~> 1.5.0"},
 
       # Shorten links: github.com/dwyl/link
       {:link, "~> 1.0.11"},
