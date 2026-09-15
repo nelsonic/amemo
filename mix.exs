@@ -11,8 +11,15 @@ defmodule Amemo.MixProject do
       aliases: aliases(),
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [
+      listeners: [Phoenix.CodeReloader]
+    ]
+  end
+
+  def cli do
+    [
+      preferred_envs: [
         c: :test,
+        ci: :test,
         coveralls: :test,
         "coveralls.detail": :test,
         "coveralls.json": :test,
@@ -68,7 +75,9 @@ defmodule Amemo.MixProject do
 
       # Track test coverage: github.com/parroty/excoveralls
       {:excoveralls, "~> 0.18.0", only: [:test, :dev]},
-      {:lazy_html, ">= 0.1.0", only: :test}
+      {:lazy_html, ">= 0.1.0", only: :test},
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.1", only: [:dev], runtime: false}
     ]
   end
 
@@ -88,6 +97,7 @@ defmodule Amemo.MixProject do
       "assets.build": ["tailwind default", "esbuild default"],
       "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"],
       c: ["coveralls.html"],
+      ci: ["coveralls.json"],
       s: ["phx.server"],
       t: ["test"]
     ]
