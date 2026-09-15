@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 jobs:
   build:
-    name: ✨ Build and test
+    name: ✨ Build + Test
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -22,19 +22,19 @@ jobs:
           --health-retries 5
     steps:
     - uses: actions/checkout@v7 # github.com/actions/checkout
-    - name: 💧 Set up Elixir
+    - name: 💧 Set Up Elixir
       uses: erlef/setup-beam@v1 # github.com/erlef/setup-beam
       with:
         elixir-version: '1.19.x' # Define the elixir version [required]
         otp-version: '28.1.x'    # Define the OTP version [required]
-    - name: 📂 Restore dependencies cache
+    - name: 📂 Restore Dependency Cache
       uses: actions/cache@v6   # github.com/actions/cache
       with:
         path: deps
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
 
-    - name: ⬇️ Install dependencies
+    - name: ⬇️ Install Dependencies
       run: mix deps.get
 
     - name: ✅ Run Tests
@@ -44,13 +44,13 @@ jobs:
         MIX_ENV: test
         AUTH_API_KEY: ${{ secrets.AUTH_API_KEY }}
     
-    - name: 🎨 Check code formating
+    - name: 🎨 Check Code Format (mix format)
       run: mix format --check-formatted
 
-    - name: 🔍 Lint the code
+    - name: 🔍 Lint The Code (credo)
       run: mix credo --all --strict
 
-    - name: 💯 Upload coverage to Codecov
+    - name: 💯 Upload Coverage To Codecov
       uses: codecov/codecov-action@v7 # github.com/codecov/codecov-action
 
 

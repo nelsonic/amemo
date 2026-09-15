@@ -19,6 +19,7 @@ defmodule Amemo.MixProject do
     [
       preferred_envs: [
         c: :test,
+        ci: :test,
         coveralls: :test,
         "coveralls.detail": :test,
         "coveralls.json": :test,
@@ -96,6 +97,7 @@ defmodule Amemo.MixProject do
       "assets.build": ["tailwind default", "esbuild default"],
       "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"],
       c: ["coveralls.html"],
+      ci: ["coveralls.json"],
       s: ["phx.server"],
       t: ["test"]
     ]
