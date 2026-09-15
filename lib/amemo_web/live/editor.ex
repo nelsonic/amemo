@@ -49,7 +49,7 @@ defmodule AmemoWeb.Editor do
     <br /> <hr /> <br />
 
     <div class="markdown">
-      <%= Phoenix.HTML.raw(to_html(String.trim(@md))) %>
+      {Phoenix.HTML.raw(to_html(String.trim(@md)))}
     </div>
     """
   end
