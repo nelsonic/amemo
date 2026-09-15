@@ -4,7 +4,7 @@
 #
 
 app = "amemo"
-primary_region = "mad"
+primary_region = "cdg"
 kill_signal = "SIGTERM"
 swap_size_mb = 512
 
