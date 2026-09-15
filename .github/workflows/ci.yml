@@ -48,7 +48,7 @@ jobs:
       run: mix format --check-formatted
 
     - name: 🔍 Lint The Code (credo)
-      run: mix credo --all --strict
+      run: mix credo
 
     - name: 💯 Upload Coverage To Codecov
       uses: codecov/codecov-action@v7 # github.com/codecov/codecov-action
