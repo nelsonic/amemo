@@ -1,4 +1,7 @@
 defmodule AmemoWeb.Editor do
+  @moduledoc """
+  Functions for the Editor
+  """
   use AmemoWeb, :live_view
 
   def mount(_params, _session, socket) do
@@ -17,7 +20,7 @@ defmodule AmemoWeb.Editor do
   end
 
   def handle_event("render", %{"text" => text}, socket) do
-    dbg(text)
+    # dbg(text)
     {:noreply, assign(socket, :md, text)}
   end
 

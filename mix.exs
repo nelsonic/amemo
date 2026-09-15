@@ -74,7 +74,9 @@ defmodule Amemo.MixProject do
 
       # Track test coverage: github.com/parroty/excoveralls
       {:excoveralls, "~> 0.18.0", only: [:test, :dev]},
-      {:lazy_html, ">= 0.1.0", only: :test}
+      {:lazy_html, ">= 0.1.0", only: :test},
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.1", only: [:dev], runtime: false}
     ]
   end
 
