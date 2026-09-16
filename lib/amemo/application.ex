@@ -11,7 +11,7 @@ defmodule Amemo.Application do
       # Start the Telemetry supervisor
       AmemoWeb.Telemetry,
       # Start the Ecto repository
-      Amemo.Repo,
+      # Amemo.Repo,
       # Start the PubSub system
       {Phoenix.PubSub, name: Amemo.PubSub},
       # Start the Endpoint (http/https)
