@@ -26,7 +26,7 @@ and some code `dbg("hello")`.
 Pasting URLs directly works too: 
 https://mvp.fly.dev
 
-![iteles](https://avatars.githubusercontent.com/u/4185328?s=80&v=4)
+![@iteles](https://avatars.githubusercontent.com/u/4185328?s=80&v=4)
 
 + Bullet Point
 1. Ordered List
@@ -57,11 +57,10 @@ you should see something similar to the following:
 
 ![amemo-localhost](https://github.com/nelsonic/amemo/assets/194400/17400372-0722-4fa7-ab38-1dfd806cd530)
 
-
 # Build Log
 
-```
-mix phx.new amemo --no-mailer --no-dashboard --no-gettext
+```sh
+mix phx.new amemo --no-mailer --no-dashboard --no-gettext --no-ecto
 ```
 
 _All_ the relevant code for this is contained in:
@@ -70,9 +69,6 @@ _All_ the relevant code for this is contained in:
 <!--
 mix phx.gen.html Blog Post posts  title:string text:text person_id:integer status:integer
 -->
-
-
-
 
 <br />
 
