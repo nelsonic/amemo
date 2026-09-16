@@ -8,8 +8,8 @@ primary_region = "cdg"
 kill_signal = "SIGTERM"
 swap_size_mb = 512
 
-[deploy]
-  release_command = "/app/bin/migrate"
+# [deploy]
+#  release_command = "/app/bin/migrate"
 
 [env]
   PHX_HOST = "amemo.fly.dev"
