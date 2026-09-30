@@ -56,7 +56,8 @@ defmodule AmemoWeb do
 
   def live_component do
     quote do
-      use Phoenix.LiveComponent
+      use Phoenix.LiveComponent,
+      layout: {AmemoWeb.Layouts, :app}
 
       unquote(html_helpers())
     end

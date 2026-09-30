@@ -38,9 +38,8 @@ Watch it render to `HTML` _server-side_ in real-time!
 
 If you want to _fully understand_ the `code`
 in this mini-project,
-please follow the `LiveView` Counter Tutorial:
+please follow the **`LiveView` Counter Tutorial**:
 [dwyl/phoenix-liveview-counter-tutorial](https://github.com/dwyl/phoenix-liveview-counter-tutorial)
-
 
 # Run it on your `localhost`
 

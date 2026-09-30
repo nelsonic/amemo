@@ -10,14 +10,11 @@ defmodule AmemoWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", AmemoWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
+    live("/", Editor)
   end
 
   # Other scopes may use custom stacks.
