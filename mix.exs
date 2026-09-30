@@ -70,8 +70,8 @@ defmodule Amemo.MixProject do
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
 
-      # Markdown parsing/rendering: github.com/pragdave/earmark
-      {:earmark, "~> 1.4.38"},
+      # Markdown parsing/rendering: github.com/leandrocp/mdex #247
+      {:mdex, "~> 0.12"},
 
       # Remove unwanted HTML: github.com/rrrene/html_sanitize_ex
       {:html_sanitize_ex, "~> 1.5.0"},

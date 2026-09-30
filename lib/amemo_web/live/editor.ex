@@ -60,7 +60,7 @@ defmodule AmemoWeb.Editor do
   def to_html(markdown) do
     markdown
     |> Link.find_replace_compact()
-    |> Earmark.as_html!()
+    |> MDEx.to_html!()
     |> HtmlSanitizeEx.html5()
     |> Link.add_target_blank()
   end
