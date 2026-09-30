@@ -27,17 +27,17 @@ defmodule AmemoWeb.Editor do
   def render(assigns) do
     ~H"""
     <h1 text-4xl>
-      Type some <b>Markdown</b> in the <b>&lt;textarea&gt;</b> and see it it rendered below.
+      Type some <b>Markdown</b> in the <b>&lt;textarea&gt;</b> and see it it <b>rendered below</b>:
     </h1>
 
     <form action="#" phx-change="render" phx-submit="render">
       <textarea
         rows="9"
-        class="w-full my-2 py-1 px-1 text-slate-800 text-xl
+        class="w-full my-2 py-1 px-3 text-slate-800 text-xl
           bg-white bg-clip-padding
           resize-none hover:resize-y focus:resize-y
           transition ease-in-out
-          border border-b border-slate-200
+          border border-b border-green-600
           focus:border-none focus:outline-none
           "
         name="text"
@@ -60,7 +60,7 @@ defmodule AmemoWeb.Editor do
   def to_html(markdown) do
     markdown
     |> Link.find_replace_compact()
-    |> Earmark.as_html!()
+    |> MDEx.to_html!()
     |> HtmlSanitizeEx.html5()
     |> Link.add_target_blank()
   end

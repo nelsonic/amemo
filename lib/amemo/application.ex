@@ -8,16 +8,13 @@ defmodule Amemo.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Start the Telemetry supervisor
       AmemoWeb.Telemetry,
-      # Start the Ecto repository
-      # Amemo.Repo,
-      # Start the PubSub system
+      {DNSCluster, query: Application.get_env(:amemo, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Amemo.PubSub},
-      # Start the Endpoint (http/https)
-      AmemoWeb.Endpoint
       # Start a worker by calling: Amemo.Worker.start_link(arg)
-      # {Amemo.Worker, arg}
+      # {Amemo.Worker, arg},
+      # Start to serve requests, typically the last entry
+      AmemoWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -10,8 +10,19 @@ defmodule Amemo.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      test_coverage: [tool: ExCoveralls],
-      listeners: [Phoenix.CodeReloader]
+      compilers: [:phoenix_live_view] ++ Mix.compilers(),
+      listeners: [Phoenix.CodeReloader],
+      test_coverage: [tool: ExCoveralls]
+    ]
+  end
+
+  # Configuration for the OTP application.
+  #
+  # Type `mix help compile.app` for more information.
+  def application do
+    [
+      mod: {Amemo.Application, []},
+      extra_applications: [:logger, :runtime_tools]
     ]
   end
 
@@ -30,16 +41,6 @@ defmodule Amemo.MixProject do
     ]
   end
 
-  # Configuration for the OTP application.
-  #
-  # Type `mix help compile.app` for more information.
-  def application do
-    [
-      mod: {Amemo.Application, []},
-      extra_applications: [:logger, :runtime_tools]
-    ]
-  end
-
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
@@ -49,23 +50,28 @@ defmodule Amemo.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.8.0"},
-      {:phoenix_ecto, "~> 4.4"},
-      {:ecto_sql, "~> 3.10"},
-      {:postgrex, ">= 0.0.0"},
-      {:phoenix_html, "~> 4.0"},
+      {:phoenix, "~> 1.8.15"},
+      {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 1.2.4"},
-      {:floki, ">= 0.30.0", only: :test},
-      {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.5.1", runtime: Mix.env() == :dev},
+      {:phoenix_live_view, "~> 1.1.0"},
+      {:lazy_html, ">= 0.1.0", only: :test},
+      {:esbuild, "~> 0.10", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
+      {:heroicons,
+       github: "tailwindlabs/heroicons",
+       tag: "v2.2.0",
+       sparse: "optimized",
+       app: false,
+       compile: false,
+       depth: 1},
       {:telemetry_metrics, "~> 1.0"},
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"},
+      {:dns_cluster, "~> 0.2.0"},
+      {:bandit, "~> 1.5"},
 
-      # Markdown parsing/rendering: github.com/pragdave/earmark
-      {:earmark, "~> 1.4.38"},
+      # Markdown parsing/rendering: github.com/leandrocp/mdex #247
+      {:mdex, "~> 0.12"},
 
       # Remove unwanted HTML: github.com/rrrene/html_sanitize_ex
       {:html_sanitize_ex, "~> 1.5.0"},
@@ -75,7 +81,6 @@ defmodule Amemo.MixProject do
 
       # Track test coverage: github.com/parroty/excoveralls
       {:excoveralls, "~> 0.18.0", only: [:test, :dev]},
-      {:lazy_html, ">= 0.1.0", only: :test},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.1", only: [:dev], runtime: false}
     ]
@@ -89,13 +94,15 @@ defmodule Amemo.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind default", "esbuild default"],
-      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"],
+      "assets.build": ["compile", "tailwind amemo", "esbuild amemo"],
+      "assets.deploy": [
+        "tailwind amemo --minify",
+        "esbuild amemo --minify",
+        "phx.digest"
+      ],
+      precommit: ["compile --warning-as-errors", "deps.unlock --unused", "format", "test"],
       c: ["coveralls.html"],
       ci: ["coveralls.json"],
       s: ["phx.server"],

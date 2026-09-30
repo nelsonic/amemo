@@ -1,10 +1,10 @@
 defmodule AmemoWeb.EditorTest do
-  use AmemoWeb.ConnCase
+  use AmemoWeb.ConnCase, async: true
   import Phoenix.LiveViewTest
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")
-    assert html_response(conn, 200) =~ "GitHub"
+    assert html_response(conn, 200) =~ "rendered below"
   end
 
   # Ref: https://hexdocs.pm/phoenix_live_view/Phoenix.LiveViewTest.html#render_change/1

@@ -38,9 +38,7 @@ defmodule AmemoWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller,
-        formats: [:html, :json],
-        layouts: [html: AmemoWeb.Layouts]
+      use Phoenix.Controller, formats: [:html, :json]
 
       import Plug.Conn
 
@@ -59,7 +57,8 @@ defmodule AmemoWeb do
 
   def live_component do
     quote do
-      use Phoenix.LiveComponent
+      use Phoenix.LiveComponent,
+        layout: {AmemoWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -82,11 +81,12 @@ defmodule AmemoWeb do
     quote do
       # HTML escaping functionality
       import Phoenix.HTML
-      # Core UI components and translation
+      # Core UI components
       import AmemoWeb.CoreComponents
 
-      # Shortcut for generating JS commands
+      # Common modules used in templates
       alias Phoenix.LiveView.JS
+      alias AmemoWeb.Layouts
 
       # Routes generation with the ~p sigil
       unquote(verified_routes())
@@ -103,7 +103,7 @@ defmodule AmemoWeb do
   end
 
   @doc """
-  When used, dispatch to the appropriate controller/view/etc.
+  When used, dispatch to the appropriate controller/live_view/etc.
   """
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])

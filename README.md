@@ -5,7 +5,7 @@
 Adventures in `Markdown` / `Rich Text` Editing 
 & Rendering in `Phoenix LiveView`
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nelsonic/amemo/ci.yml?label=build&style=flat-square&branch=main)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nelsonic/amemo/ci.yml?label=build&style=flat-square&branch=main)](https://github.com/nelsonic/amemo/actions/workflows/ci.yml)
 [![codecov.io](https://img.shields.io/codecov/c/github/nelsonic/amemo/main.svg?style=flat-square)](http://codecov.io/github/nelsonic/amemo?branch=main)
 [![Hex.pm](https://img.shields.io/hexpm/v/phoenix?color=brightgreen&style=flat-square)](https://hex.pm/packages/elixir_auth_google)
 [![contributions welcome](https://img.shields.io/badge/feedback-welcome-brightgreen.svg?style=flat-square)](https://github.com/nelsonic/amemo/issues)
@@ -26,7 +26,7 @@ and some code `dbg("hello")`.
 Pasting URLs directly works too: 
 https://mvp.fly.dev
 
-![iteles](https://avatars.githubusercontent.com/u/4185328?s=80&v=4)
+![@iteles](https://avatars.githubusercontent.com/u/4185328?s=80&v=4)
 
 + Bullet Point
 1. Ordered List
@@ -38,9 +38,8 @@ Watch it render to `HTML` _server-side_ in real-time!
 
 If you want to _fully understand_ the `code`
 in this mini-project,
-please follow the `LiveView` Counter Tutorial:
+please follow the **`LiveView` Counter Tutorial**:
 [dwyl/phoenix-liveview-counter-tutorial](https://github.com/dwyl/phoenix-liveview-counter-tutorial)
-
 
 # Run it on your `localhost`
 
@@ -57,11 +56,10 @@ you should see something similar to the following:
 
 ![amemo-localhost](https://github.com/nelsonic/amemo/assets/194400/17400372-0722-4fa7-ab38-1dfd806cd530)
 
-
 # Build Log
 
-```
-mix phx.new amemo --no-mailer --no-dashboard --no-gettext
+```sh
+mix phx.new amemo --no-mailer --no-dashboard --no-gettext --no-ecto
 ```
 
 _All_ the relevant code for this is contained in:
@@ -70,9 +68,6 @@ _All_ the relevant code for this is contained in:
 <!--
 mix phx.gen.html Blog Post posts  title:string text:text person_id:integer status:integer
 -->
-
-
-
 
 <br />
 

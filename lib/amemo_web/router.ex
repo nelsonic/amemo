@@ -10,17 +10,10 @@ defmodule AmemoWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  # Ref: https://github.com/dwyl/learn-phoenix-framework/issues/155
-  # plug Plug.Static,
-  #   at: "/",
-  #   from: :amemo,
-  #   gzip: false,
-  #   only: ["mix.lock"]
-  #   from: {:my_app, "mix.lock"},
-
   scope "/", AmemoWeb do
     pipe_through :browser
 
+    # get "/", PageController, :home
     live("/", Editor)
   end
 end
