@@ -5,7 +5,7 @@
 Adventures in `Markdown` / `Rich Text` Editing 
 & Rendering in `Phoenix LiveView`
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nelsonic/amemo/ci.yml?label=build&style=flat-square&branch=main)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nelsonic/amemo/ci.yml?label=build&style=flat-square&branch=main)](https://github.com/nelsonic/amemo/actions/workflows/ci.yml)
 [![codecov.io](https://img.shields.io/codecov/c/github/nelsonic/amemo/main.svg?style=flat-square)](http://codecov.io/github/nelsonic/amemo?branch=main)
 [![Hex.pm](https://img.shields.io/hexpm/v/phoenix?color=brightgreen&style=flat-square)](https://hex.pm/packages/elixir_auth_google)
 [![contributions welcome](https://img.shields.io/badge/feedback-welcome-brightgreen.svg?style=flat-square)](https://github.com/nelsonic/amemo/issues)
