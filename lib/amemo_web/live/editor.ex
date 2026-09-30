@@ -27,8 +27,7 @@ defmodule AmemoWeb.Editor do
   def render(assigns) do
     ~H"""
     <h1 text-4xl>
-      Type some <b>Markdown</b> in the <b>&lt;textarea&gt;</b>
-      and see it it <b>rendered below</b>:
+      Type some <b>Markdown</b> in the <b>&lt;textarea&gt;</b> and see it it <b>rendered below</b>:
     </h1>
 
     <form action="#" phx-change="render" phx-submit="render">
