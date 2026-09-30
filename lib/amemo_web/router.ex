@@ -16,9 +16,4 @@ defmodule AmemoWeb.Router do
     # get "/", PageController, :home
     live("/", Editor)
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", AmemoWeb do
-  #   pipe_through :api
-  # end
 end
